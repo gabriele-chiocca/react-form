@@ -8,33 +8,36 @@ console.log(articles);
 export default function App() {
   return (
     <>
-      <h1>Lista Articoli</h1>
-      <div className="container text-center bg-white border border-dark ">
-        {articles.map((article, index) => {
-          return (
-            <ul>
-              <li>{article}</li>
-            </ul>
-          );
-        })}
+      <div className="container">
+        <h1>Lista Articoli</h1>
+        <div className=" text-center bg-white border border-dark ">
+          {articles.map((article, index) => {
+            return (
+              <ul>
+                <li>{article}</li>
+              </ul>
+            );
+          })}
+        </div>
+        <hr />
       </div>
 
       <div className="container mt-5">
-        <form action="" className="form-inline">
-          <div className="form-group">
-            <label className="sr-only" htmlFor="InputTitle">
-              Titolo articolo
-            </label>
+        <form action="" className="">
+          <div class="input-group mb-3">
             <input
               type="text"
               className="form-control"
-              id="exampleTitle"
-              placeholder="Inserisci Titolo Articolo"
+              placeholder="Recipient’s username"
+              aria-label="Recipient’s username"
+              aria-describedby="button-addon2"
             />
-          </div>
-          <div className="form-group mt-3">
-            <button type="submit" className="btn btn-primary">
-              Invia
+            <button
+              className="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+            >
+              Button
             </button>
           </div>
         </form>

@@ -18,11 +18,19 @@ export default function App() {
         })}
       </div>
 
-      <form action="">
-        <div>
-          <label htmlFor="InputTitle">Inserisci Titolo articolo</label>
-        </div>
-      </form>
+      <div className="container mt-5">
+        <form action="">
+          <div>
+            <label htmlFor="InputTitle">Titolo articolo</label>
+            <input
+              type="text"
+              className="form-control"
+              id="exampleTitle"
+              placeholder="Inserisci Titolo Articolo"
+            />
+          </div>
+        </form>
+      </div>
     </>
   );
 }

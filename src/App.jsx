@@ -1,16 +1,19 @@
 import { useState } from 'react';
 
-const articles = ['Titolo 1', 'Titolo 2', 'Titolo 3'];
+const initialArticles = ['Titolo 1', 'Titolo 2', 'Titolo 3'];
+
 console.log(articles);
 
-const handleFormSubmit = (e) => {
-  e.preventDefault();
-};
-
-const handleNewArticle = (e) => setNewArticle(e.target.value);
-
 export default function App() {
+  const [articles, toDoArticle] = useState(initialArticles);
   const [newArticle, setNewArticle] = useState('');
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    articles.push(newArticle);
+  };
+
+  const handleNewArticle = (e) => setNewArticle(e.target.value);
   return (
     <>
       <div className="container">

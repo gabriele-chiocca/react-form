@@ -1,43 +1,48 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 
 const articles = ['Titolo 1', 'Titolo 2', 'Titolo 3'];
 console.log(articles);
 
+const handleFormSubmit = (e) => {
+  e.preventDefault();
+};
+
+const handleNewArticle = (e) => setNewArticle(e.target.value);
+
 export default function App() {
+  const [newArticle, setNewArticle] = useState('');
   return (
     <>
       <div className="container">
         <h1>Lista Articoli</h1>
-        <div className=" text-center bg-white border border-dark ">
-          {articles.map((article, index) => {
-            return (
-              <ul>
-                <li>{article}</li>
-              </ul>
-            );
-          })}
+        <div className="">
+          <ul className="my-3">
+            {articles.map((article, index) => {
+              return <li>{article}</li>;
+            })}
+          </ul>
         </div>
         <hr />
       </div>
 
       <div className="container mt-5">
-        <form action="" className="">
-          <div class="input-group mb-3">
+        <form onSubmit={handleFormSubmit} action="" className="">
+          <div className="input-group mb-3">
             <input
+              value={newArticle}
+              onChange={handleNewArticle}
               type="text"
               className="form-control"
-              placeholder="Recipient’s username"
+              placeholder="Inserisci il titolo"
               aria-label="Recipient’s username"
               aria-describedby="button-addon2"
             />
             <button
-              className="btn btn-outline-secondary"
+              className="btn btn-outline-primary"
               type="button"
               id="button-addon2"
             >
-              Button
+              Aggiungi Titolo
             </button>
           </div>
         </form>

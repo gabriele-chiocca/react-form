@@ -2,15 +2,14 @@ import { useState } from 'react';
 
 const initialArticles = ['Titolo 1', 'Titolo 2', 'Titolo 3'];
 
-console.log(articles);
-
 export default function App() {
-  const [articles, toDoArticle] = useState(initialArticles);
+  const [articles, setArticle] = useState(initialArticles);
   const [newArticle, setNewArticle] = useState('');
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    articles.push(newArticle);
+    setArticle([...articles, newArticle]);
+    setNewArticle('');
   };
 
   const handleNewArticle = (e) => setNewArticle(e.target.value);
@@ -42,7 +41,7 @@ export default function App() {
             />
             <button
               className="btn btn-outline-primary"
-              type="button"
+              type="submit"
               id="button-addon2"
             >
               Aggiungi Titolo

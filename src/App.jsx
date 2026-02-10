@@ -16,7 +16,7 @@ export default function App() {
   return (
     <>
       <div className="container">
-        <h1>Lista Articoli</h1>
+        <h1>Lista Titoli Articoli</h1>
         <div className="">
           <ul className="my-3">
             {articles.map((article, index) => {

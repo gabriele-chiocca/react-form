@@ -8,6 +8,7 @@ console.log(articles);
 export default function App() {
   return (
     <>
+      <h1>Lista Articoli</h1>
       <div className="container text-center bg-white border border-dark ">
         {articles.map((article, index) => {
           return (
@@ -19,15 +20,22 @@ export default function App() {
       </div>
 
       <div className="container mt-5">
-        <form action="">
-          <div>
-            <label htmlFor="InputTitle">Titolo articolo</label>
+        <form action="" className="form-inline">
+          <div className="form-group">
+            <label className="sr-only" htmlFor="InputTitle">
+              Titolo articolo
+            </label>
             <input
               type="text"
               className="form-control"
               id="exampleTitle"
               placeholder="Inserisci Titolo Articolo"
             />
+          </div>
+          <div className="form-group mt-3">
+            <button type="submit" className="btn btn-primary">
+              Invia
+            </button>
           </div>
         </form>
       </div>
